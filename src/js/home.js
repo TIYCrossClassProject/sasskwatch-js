@@ -16,7 +16,7 @@ export default class Home extends Component {
           </div>
           <div className="home-header-add-photo">
             <h3>Submit Questions Here</h3>
-            <Icon type="plus-square"/>
+            <button><i type="plus-square"/></button>
           </div>
         </div>
         <div className="home-content">
