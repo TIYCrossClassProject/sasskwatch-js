@@ -1,4 +1,4 @@
-import React { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class Icon extends Component {
 
@@ -7,7 +7,7 @@ export default class Icon extends Component {
 	}
 
 	render() {
-		let {type} = this.props;
+		let { type } = this.props;
 		return (
 			<i className={`fa fa-${type}`} />
 		);
