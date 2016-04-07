@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import SSF from 'react-simple-serial-form';
+
 
 export default class LoginView extends Component {
 
@@ -10,9 +12,9 @@ export default class LoginView extends Component {
 	render() {
 		return (
 			<div className="login-view">
-				<SSF onData={dataHandler}>
-					<input type="text" name="username" placeholder=" Enter Your Username"></input>
-					<input type="password" name="password" placeholder=" Enter Your Password"></input>
+				<SSF onData={x => x}>
+					<div><input type="text" name="username" placeholder=" Enter Your Username"/></div>
+					<div><input type="password" name="password" placeholder=" Enter Your Password"/></div>
 					<button>Log In</button>
 				</SSF>
 			</div>
