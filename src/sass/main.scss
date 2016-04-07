@@ -1,5 +1,76 @@
 /* CSS Entry Point */
 
-// Turn on freq used libraries
+//LIBRARIES IN USE
 @import 'normalize-css/normalize';
 @import 'font-awesome/scss/font-awesome';
+
+///////////////////
+//  APP STYLES   //
+///////////////////
+
+body {
+  // background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRDk4jGat7ot2djnucqCbPN9nb6yldIPb4WraxvBXl1V3D-CIpN");
+  // background-size: 100% 100%;
+  margin: 30px 0 0 0;
+  background: #efefef;
+  .app {
+  width: 50%;
+  margin: auto;
+  }
+}
+
+
+///////////////////
+//   HOME VIEW   //
+///////////////////
+
+//See the home.js for html structure.
+.home-view {
+  
+}
+
+h1, h3, .home-header-title, .home-header-add-photo {
+  display: inline-block;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1, h3 {
+  margin: 0;
+}
+
+.home-header {
+  display: flex;
+}
+
+#home-add-photo-btn {
+  border: none;
+  background: none;
+}
+
+#home-login-signup-btn {
+  display: flex;
+  justify-content: center;
+}
+
+#home-sign-up-btn, #home-login-btn {
+  display: inline-block;
+  margin: 30px;
+
+   
+}
+
+.home-content {
+
+}
+
+#img-sasquatch, #img-sasquatch-flip {
+  height: 420px;
+  margin: auto;
+}
+
+#img-sasquatch-flip {
+  transform: scaleX(-1);
+}

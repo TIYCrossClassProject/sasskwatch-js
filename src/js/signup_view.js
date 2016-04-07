@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import SSF from 'react-simple-serial-form';
-import Dropzone from 'react-sropzone';
+import Dropzone from 'react-dropzone';
 
 export default class SignupView extends Component {
 
