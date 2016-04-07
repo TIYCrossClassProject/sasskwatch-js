@@ -1,10 +1,10 @@
-simport React, { Component, PropTypes } from React;
+import React, { Component, PropTypes } from 'react';
 
 export default class LoginView extends Component {
 
 	static propTypes = {
-		onLoginToSignup = PropTypes.func.isRequired,
-		onLoginSubmit = PropTypes.func.isRequired
+		onLoginToSignup: PropTypes.func.isRequired,
+		onLoginSubmit: PropTypes.func.isRequired
 	}
 
 	render() {

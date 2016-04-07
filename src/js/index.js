@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import Home from './home';
 import SignupView from './signup_view';
 import NavBar from './nav_bar';
+import LoginView from './login_view';
 import GameView from './game_view';
 
 
