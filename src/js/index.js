@@ -4,18 +4,28 @@ import React, { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
 import Home from './home';
 import SignupView from './signup_view';
+import NavBar from './nav_bar';
+import GameView from './game_view';
 
 
 
 
 function renderHome() {
     render((
-    <Home onSignUp={renderSignupView} onLogin={x => x}/>
+    <Home onSignUp={renderSignupView} onLogin={renderLoginView}/>
     ), document.querySelector('.app')
   );
 }
 
-
+function renderNavBar() {
+    render((
+      <NavBar onPlay={renderGameView} 
+              onAddImage={x => x} 
+              onAccount={x => x} 
+              onLogout={x => x}/>
+      ), document.querySelector('.app')
+    );
+}
 
 function renderSignupView() {
 
@@ -30,12 +40,19 @@ function renderSignupView() {
 function renderLoginView() {
 
    render((
-    <LoginView onSwitchToSignup={x => x} onLoginSubmit={x => x}/>
+    <LoginView onLoginToSignup={x => x} onLoginSubmit={x => x}/>
     ), document.querySelector('.app')
   );
 
 }
 
-renderHome();
+function renderGameView() {
+    render((
+    <Home onSignUp={renderGame} onLogin={x => x}/>
+    ), document.querySelector('.app')
+  );
+}
 
+renderHome();
+// renderNavBar();
 
