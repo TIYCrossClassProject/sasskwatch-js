@@ -14,7 +14,7 @@ export default class ImageUploadSuccessView extends Component {
 					Your image was successfully uploaded!
 				</div>
 				<button onClick={onAddAnotherImage}>Add Another Image</button>
-				<button onCLick={onTakeMeHome}>Back Home</button>
+				<button onClick={onTakeMeHome}>Back Home</button>
 			</div>
 		);
 	}
