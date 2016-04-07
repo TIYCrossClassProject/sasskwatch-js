@@ -10,30 +10,31 @@ import SignupView from './signup_view';
 
 function renderHome() {
     render((
-    <Home onSignUp={renderSignUpView} onLogin={x => x}/>
+    <Home onSignUp={renderSignupView} onLogin={x => x}/>
     ), document.querySelector('.app')
   );
 }
 
 
 
-function renderSignUpView() {
+function renderSignupView() {
 
    render((
-    <SignupView/>
+    <SignupView onSwitchToLogin={renderLoginView} onSignupSubmit={x => x} onAvatarAdd={x => x}/>
     ), document.querySelector('.app')
   );
 
 }
 
-// function renderLoginView() {
 
-//    render((
-//     <LoginView/>
-//     ), document.querySelector('.app')
-//   );
+function renderLoginView() {
 
-// }
+   render((
+    <LoginView onSwitchToSignup={x => x} onLoginSubmit={x => x}/>
+    ), document.querySelector('.app')
+  );
+
+}
 
 renderHome();
 

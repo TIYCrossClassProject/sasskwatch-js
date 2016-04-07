@@ -14,7 +14,7 @@ export default class SignupView extends Component {
 	static propTypes = {
 		onSwitchToLogin: PropTypes.func.isRequired,
 		onSignupSubmit: PropTypes.func.isRequired,
-		onAdd: PropTypes.func.isRequired
+		onAvatarAdd: PropTypes.func.isRequired
 	}
 
 	dropHandler([file]) {
@@ -24,7 +24,7 @@ export default class SignupView extends Component {
 
 	dataHandler(data) {
 		data.file = this.file;
-		this.props.onAdd(data);
+		this.props.onAvatarAdd(data);
 	}
 
 	render() {
@@ -38,7 +38,7 @@ export default class SignupView extends Component {
 					<input type="text" name="email" placeholder=" Email Address"></input>
 					<input type="password" name="password" placeholder=" Create Password"></input>
 					<Dropzone onDrop={dropHandler}>
-						<img src={preview} alt="Drop Image Here" />
+						<img src={preview} alt="Drop Image Here"/>
 					</Dropzone>
 					<button>Submit</button>
 				</SSF>
