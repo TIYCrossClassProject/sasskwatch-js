@@ -20,7 +20,7 @@ function renderHome() {
 function renderSignupView() {
 
    render((
-    <SignupView onSwitchToLogin={renderLoginView} onSignupSubmit={x => x} onAvatarAdd={x => x}/>
+    <SignupView onSwitchToLogin={x => x} onSignupSubmit={x => x} onAvatarAdd={x => x}/>
     ), document.querySelector('.app')
   );
 

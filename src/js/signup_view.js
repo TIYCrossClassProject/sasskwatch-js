@@ -18,8 +18,10 @@ export default class SignupView extends Component {
 	}
 
 	dropHandler([file]) {
+	
 		this.setState({preview: file.preview})
 		this.file = file;
+		console.log(file);
 	}
 
 	dataHandler(data) {
@@ -31,18 +33,28 @@ export default class SignupView extends Component {
 		let { preview } = this.state;
 		return (
 			<div className="signup-view">
+				<div><h2>Sign Up to Play Now!</h2></div>
 				<SSF onData={::this.dataHandler}>
-					<input type="text" name="firstName" placeholder=" First Name"></input>
-					<input type="text" name="lastName" placeholder=" Last Name"></input>
-					<input type="text" name="username" placeholder=" Username"></input>
-					<input type="text" name="email" placeholder=" Email Address"></input>
-					<input type="password" name="password" placeholder=" Create Password"></input>
-					<Dropzone onDrop={dropHandler}>
-						<img src={preview} alt="Drop Image Here"/>
-					</Dropzone>
+					<div><input type="text" name="firstName" placeholder=" First Name"/></div>
+					<div><input type="text" name="lastName" placeholder=" Last Name"/></div>
+					<div><input type="text" name="username" placeholder=" Username"/></div>
+					<div><input type="text" name="email" placeholder=" Email Address"/></div>
+					<div><input type="password" name="password" placeholder=" Create Password"/></div>
+					
+						<Dropzone onDrop={::this.dropHandler}>
+							<img id="signup-placeholder" height="500" width="500"rc={preview} alt="Drop Image Here"/>
+						</Dropzone>
+					
 					<button>Submit</button>
 				</SSF>
 			</div>
 		);
 	}
 }
+
+// <div id="signup-drop">
+// </div>
+
+
+
+
