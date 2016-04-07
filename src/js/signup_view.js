@@ -31,6 +31,7 @@ export default class SignupView extends Component {
 
 	render() {
 		let { preview } = this.state;
+		let { onSignupSubmit } = this.props;
 		return (
 			<div className="signup-view">
 				<div><h2>Sign Up to Play Now!</h2></div>
@@ -45,7 +46,7 @@ export default class SignupView extends Component {
 							<img id="signup-placeholder" height="200" width="200" src={preview} alt="Drop Image Here"/>
 						</Dropzone>
 					
-					<button>Submit</button>
+					<button onClick={onSignupSubmit}>Submit</button>
 				</SSF>
 			</div>
 		);

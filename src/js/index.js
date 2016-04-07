@@ -31,7 +31,7 @@ function renderNavBar() {
 function renderSignupView() {
 
    render((
-    <SignupView onSwitchToLogin={x => x} onSignupSubmit={x => x} onAvatarAdd={x => x}/>
+    <SignupView onSwitchToLogin={x => x} onSignupSubmit={renderGameView} onAvatarAdd={x => x}/>
     ), document.querySelector('.app')
   );
 
@@ -49,7 +49,7 @@ function renderLoginView() {
 
 function renderGameView() {
     render((
-    <Home onSignUp={renderGame} onLogin={x => x}/>
+    <GameView onSignUp={renderGameView} onLogin={x => x}/>
     ), document.querySelector('.app')
   );
 }

@@ -21,7 +21,7 @@ export default class NavBar extends Component {
 
   selectHandler () {
     let { onPlay, onAddImage, onAccount, onLogout } = this.props;
-    
+
   }
 
   render() {
@@ -31,25 +31,25 @@ export default class NavBar extends Component {
         <Tab className="nav-tabs" 
              label="Play Game" 
              value="play game" 
-             onPlay={::this.selectHandler}>
+             onActive={onPlay}>
         </Tab>
 
         <Tab className="nav-tabs" 
              label="Add Image" 
              value="add image" 
-             onAddImage={::this.selectHandler}>
+             onActive={onAddImage}>
         </Tab>
 
         <Tab className="nav-tabs" 
              label="Account" 
              value="account" 
-             onAccount={::this.selectHandler}>
+             onActive={onAccount}>
         </Tab>
 
         <Tab className="nav-tabs" 
              label="Log Out" 
              value="log out" 
-             onLogout={::this.selectHandler}>
+             onActive={onLogout}>
         </Tab>
 
       </Tabs>
