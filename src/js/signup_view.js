@@ -42,7 +42,7 @@ export default class SignupView extends Component {
 					<div><input type="password" name="password" placeholder=" Create Password"/></div>
 					
 						<Dropzone className="dropzone" onDrop={::this.dropHandler}>
-							<img id="signup-placeholder" height="500" width="500" src={preview} alt="Drop Image Here"/>
+							<img id="signup-placeholder" height="200" width="200" src={preview} alt="Drop Image Here"/>
 						</Dropzone>
 					
 					<button>Submit</button>

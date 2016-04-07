@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from React;
+simport React, { Component, PropTypes } from React;
 
 export default class LoginView extends Component {
 
