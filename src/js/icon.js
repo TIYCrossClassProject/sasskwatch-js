@@ -7,9 +7,9 @@ export default class Icon extends Component {
 	}
 
 	render() {
-		let {type} = this.props;
+		let { type } = this.props;
 		return (
-			<i className={`fa fa-${type}`} />
+			<i className={`fa fa-${type}`}/>
 		);
 	}
 }
