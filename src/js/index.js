@@ -49,7 +49,10 @@ function renderLoginView() {
 
 function renderGameView() {
     render((
-    <GameView onSignUp={renderGameView} onLogin={x => x}/>
+    <GameView onPlay={x => x} 
+              onAddImage={x => x} 
+              onAccount={x => x} 
+              onLogout={x => x}/>
     ), document.querySelector('.app')
   );
 }
