@@ -9,6 +9,7 @@ import LoginView from './login_view';
 import GameView from './game_view';
 import {ajax} from 'jquery';
 import NProgress from 'react-nprogress';
+import ImageAddView from './image_add_view';
 
 
 
