@@ -46,7 +46,7 @@ export default class SignupView extends Component {
 							<img id="signup-placeholder" height="200" width="200" src={preview} alt="Drop Image Here"/>
 						</Dropzone>
 					
-					<button onClick={onSignupSubmit}>Submit</button>
+					<button>Submit</button>
 				</SSF>
 			</div>
 		);
@@ -54,7 +54,10 @@ export default class SignupView extends Component {
 }
 
 // <div id="signup-drop">
-// </div>
+
+// </div> onClick={onSignupSubmit}
+
+
 
 
 
