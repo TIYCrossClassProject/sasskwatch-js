@@ -14,7 +14,6 @@ export default class SignupView extends Component {
 	static propTypes = {
 		onSwitchToLogin: PropTypes.func.isRequired,
 		onSignupSubmit: PropTypes.func.isRequired,
-		onAvatarAdd: PropTypes.func.isRequired
 	}
 
 	dropHandler([file]) {
@@ -26,7 +25,7 @@ export default class SignupView extends Component {
 
 	dataHandler(data) {
 		data.file = this.file;
-		this.props.onAvatarAdd(data);
+		this.props.onSignupSubmit(data);
 	}
 
 	render() {

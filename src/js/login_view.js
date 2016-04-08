@@ -9,6 +9,11 @@ export default class LoginView extends Component {
 		onLoginSubmit: PropTypes.func.isRequired
 	}
 
+
+	dataHandler() {
+
+	}
+
 	render() {
 		return (
 			<div className="login-view">

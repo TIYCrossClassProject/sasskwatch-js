@@ -12,6 +12,34 @@ import NProgress from 'react-nprogress';
 
 
 
+let addUserAndRenderGame = (user) => {
+
+  let data = new FormData();
+  data.append('firstName', user.firstName);
+  data.append('lastName', user.lastname);
+  data.append('email', user.email);
+  data.append('username', user.username);
+  data.append('password', user.password);
+  data.append('avatar', user.file);
+
+  NProgress.start();
+
+ajax({
+  url: 'http://lit-headland-16057.herokuapp.com/',
+  type: 'POST',
+  data: data,
+  cahce: false,
+  dataType: 'json',
+  processData: false,
+  contentType: false
+}).then(() => {
+  NProgress.done();
+  renderGameView();
+})
+
+}
+
+
 
 function renderHome() {
     render((
@@ -33,7 +61,7 @@ function renderNavBar() {
 function renderSignupView() {
 
    render((
-    <SignupView onSwitchToLogin={x => x} onSignupSubmit={renderGameView} onAvatarAdd={x => x}/>
+    <SignupView onSwitchToLogin={renderLoginView} onSignupSubmit={addUserAndRenderGame} />
     ), document.querySelector('.app')
   );
 
@@ -43,7 +71,7 @@ function renderSignupView() {
 function renderLoginView() {
 
    render((
-    <LoginView onLoginToSignup={x => x} onLoginSubmit={x => x}/>
+    <LoginView onLoginToSignup={renderSignupView} onLoginSubmit={x => x}/>
     ), document.querySelector('.app')
   );
 
