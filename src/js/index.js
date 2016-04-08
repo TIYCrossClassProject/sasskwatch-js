@@ -30,7 +30,7 @@ ajax({
   url: 'http://lit-headland-16057.herokuapp.com/',
   type: 'POST',
   data: data,
-  cahce: false,
+  cache: false,
   dataType: 'json',
   processData: false,
   contentType: false
@@ -54,7 +54,7 @@ let loginAndRenderGame = (user) => {
     url: 'http://lit-headland-16057.herokuapp.com/',
     type: 'POST',
     data: data,
-    cahce: false,
+    cache: false,
     dataType: 'json',
     processData: false,
     contentType: false
