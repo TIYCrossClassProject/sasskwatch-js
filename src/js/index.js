@@ -7,6 +7,8 @@ import SignupView from './signup_view';
 import NavBar from './nav_bar';
 import LoginView from './login_view';
 import GameView from './game_view';
+import {ajax} from 'jquery';
+import NProgress from 'react-nprogress';
 
 
 

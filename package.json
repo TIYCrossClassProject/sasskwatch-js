@@ -39,6 +39,7 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-dropzone": "^3.3.4",
+    "react-nprogress": "^0.1.6",
     "react-simple-serial-form": "^1.0.0"
   }
 }
