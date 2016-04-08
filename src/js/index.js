@@ -21,7 +21,7 @@ function renderHome() {
 function renderNavBar() {
     render((
       <NavBar onPlay={renderGameView} 
-              onAddImage={x => x} 
+              onAddImage={renderImageAddView} 
               onAccount={x => x} 
               onLogout={x => x}/>
       ), document.querySelector('.app')
@@ -47,6 +47,13 @@ function renderLoginView() {
 
 }
 
+function renderImageAddView() {
+    render((
+    <ImageAddView onImageSubmit={x => x} onGameImageAdd={x => x}/>
+    ), document.querySelector('.app')
+  );
+}
+
 function renderGameView() {
     render((
     <GameView onPlay={x => x} 
@@ -59,4 +66,6 @@ function renderGameView() {
 
 renderHome();
 // renderNavBar();
+
+//Add this back to line 52
 

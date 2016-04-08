@@ -10,10 +10,7 @@ export default class GameView extends Component {
   render() {
     return (
     <div>
-      <NavBar onPlay={x => x} 
-              onAddImage={x => x} 
-              onAccount={x => x} 
-              onLogout={x => x}/>
+      
 
       <div className="score-container">
         <div className="score-wrapper">
@@ -39,3 +36,8 @@ export default class GameView extends Component {
   }
 
 }
+
+// <NavBar onPlay={x => x} 
+//               onAddImage={x => x} 
+//               onAccount={x => x} 
+//               onLogout={x => x}/>
