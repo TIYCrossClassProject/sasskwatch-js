@@ -19,9 +19,9 @@ let addUserAndRenderGame = (user) => {
   data.append('first', user.first);
   data.append('last', user.last);
   data.append('email', user.email);
-  data.append('alias', user.alias);
+  data.append('alias', user.username);
   data.append('password', user.password);
-  data.append('avatar', user.file);
+  data.append('avatar', user.avatar);
 
   NProgress.start();
 
@@ -37,8 +37,31 @@ ajax({
 
   NProgress.done();
   renderGameView();
-})
+  })
+}
 
+let loginAndRenderGame = (user) => {
+  console.log('signing in', user);
+
+  let data = new FormData();
+  data.append('alias', user.username);
+  data.append('password', user.password);
+
+  NProgress.start();
+
+  ajax({
+    url: 'http://lit-headland-16057.herokuapp.com/',
+    type: 'POST',
+    data: data,
+    cahce: false,
+    dataType: 'json',
+    processData: false,
+    contentType: false
+  }).then(() => {
+
+    NProgress.done();
+    renderGameView();
+  })
 }
 
 
@@ -73,7 +96,7 @@ function renderSignupView() {
 function renderLoginView() {
 
    render((
-    <LoginView onLoginToSignup={renderSignupView} onLoginSubmit={x => x}/>
+    <LoginView onLoginToSignup={renderSignupView} onLoginSubmit={loginAndRenderGame}/>
     ), document.querySelector('.app')
   );
 

@@ -16,15 +16,15 @@ export default class SignupView extends Component {
 		onSignupSubmit: PropTypes.func.isRequired,
 	}
 
-	dropHandler([file]) {
+	dropHandler([avatar]) {
 	
-		this.setState({preview: file.preview})
-		this.file = file;
-		console.log(file);
+		this.setState({preview: avatar.preview})
+		this.avatar = avatar;
+		console.log(avatar);
 	}
 
 	dataHandler(data) {
-		data.file = this.file;
+		data.avatar = this.avatar;
 		this.props.onSignupSubmit(data);
 	}
 
