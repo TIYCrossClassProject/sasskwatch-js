@@ -10,8 +10,8 @@ export default class LoginView extends Component {
 	}
 
 
-	dataHandler() {
-
+	dataHandler(data) {
+		this.props.onLoginSubmit(data);
 	}
 
 	render() {
