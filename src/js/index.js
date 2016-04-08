@@ -13,12 +13,13 @@ import NProgress from 'react-nprogress';
 
 
 let addUserAndRenderGame = (user) => {
+  console.log(' new user ', user);
 
   let data = new FormData();
-  data.append('firstName', user.firstName);
-  data.append('lastName', user.lastname);
+  data.append('first', user.first);
+  data.append('last', user.last);
   data.append('email', user.email);
-  data.append('username', user.username);
+  data.append('alias', user.alias);
   data.append('password', user.password);
   data.append('avatar', user.file);
 
@@ -33,6 +34,7 @@ ajax({
   processData: false,
   contentType: false
 }).then(() => {
+
   NProgress.done();
   renderGameView();
 })
