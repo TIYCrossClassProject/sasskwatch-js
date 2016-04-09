@@ -9,9 +9,9 @@ export default class GameView extends Component {
 
   render() {
     return (
-    <div>
-      
+    <div className="game-view">
 
+    
       <div className="score-container">
         <div className="score-wrapper">
           <p>Score Display</p>
@@ -27,15 +27,10 @@ export default class GameView extends Component {
       <div className="answer-choice-wrapper">
         <input type="text" placeholder="Type Your Answer Here"/>
       </div>  
-      
+
     </div>    
     );
      
   }
 
 }
-
-// <NavBar onPlay={x => x} 
-//               onAddImage={x => x} 
-//               onAccount={x => x} 
-//               onLogout={x => x}/>

@@ -49,42 +49,42 @@ ajax({
   })
 }
 
-let loginAndRenderGame = (user) => {
+// let loginAndRenderGame = (user) => {
 
-  console.log('signing in', user);
+//   console.log('signing in', user);
 
-  NProgress.start();
+//   NProgress.start();
 
-  ajax({
-    url: 'http://lit-headland-16057.herokuapp.com/',
-    type: 'POST',
-    data: {
-      alias: user.alias,
-      password: user.password
-    },
-    cache: false,
-    dataType: 'json',
-    processData: false,
-    contentType: false
-  }).then(resp => {
-    if (resp.success) {
-      renderGameView();
+//   ajax({
+//     url: 'http://lit-headland-16057.herokuapp.com/',
+//     type: 'POST',
+//     data: {
+//       alias: user.alias,
+//       password: user.password
+//     },
+//     cache: false,
+//     dataType: 'json',
+//     processData: false,
+//     contentType: false
+//   }).then(resp => {
+//     if (resp.success) {
+//       renderGameView();
 
-      loggedInUser = resp.alias;
+//       loggedInUser = resp.alias;
 
-      ajaxSetup({
-      headers: {
-        'X-Access-Token': resp.access_token
-      }
-    }) 
-  } else {
-      alert('Invalid Username and Password!');
-      }
+//       ajaxSetup({
+//       headers: {
+//         'X-Access-Token': resp.access_token
+//       }
+//     }) 
+//   } else {
+//       alert('Invalid Username and Password!');
+//       }
 
-    NProgress.done();
-    renderGameView();
-  });
-}
+//     NProgress.done();
+//     renderGameView();
+//   });
+// }
 
 
 
@@ -141,8 +141,6 @@ function renderGameView() {
   );
 }
 
-renderHome();
+// renderHome();
 // renderNavBar();
-
-//Add this back to line 52
-
+renderGameView();
