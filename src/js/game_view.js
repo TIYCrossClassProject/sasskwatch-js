@@ -25,11 +25,9 @@ export default class GameView extends Component {
       </div>
 
       <div className="answer-choice-wrapper">
-        <input type="radio">Answer A</input>
-        <input type="radio">Answer B</input>
-        <input type="radio">Answer C</input>
-        <input type="radio">Answer D</input>
+        <input type="text" placeholder="Type Your Answer Here"/>
       </div>  
+      
     </div>    
     );
      
