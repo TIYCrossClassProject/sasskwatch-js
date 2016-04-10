@@ -133,10 +133,12 @@ function renderImageAddView() {
 
 function renderGameView() {
     render((
-    <GameView onPlay={x => x} 
-              onAddImage={x => x} 
+    <GameView>
+     <NavBar onPlay={renderGameView} 
+              onAddImage={renderImageAddView} 
               onAccount={x => x} 
               onLogout={x => x}/>
+    </GameView>
     ), document.querySelector('.app')
   );
 }

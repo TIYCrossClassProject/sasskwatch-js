@@ -20,12 +20,12 @@ export default class NavBar extends Component {
   }
 
   selectHandler () {
-    let { onPlay, onAddImage, onAccount, onLogout } = this.props;
+   let { onSelectNavOption } = this.props;
 
   }
 
   render() {
-    let { onSelectNavOption } = this.props;
+     let { onPlay, onAddImage, onAccount, onLogout } = this.props;
     return (
       <Tabs className="nav-bar">
         <Tab className="nav-tabs" 

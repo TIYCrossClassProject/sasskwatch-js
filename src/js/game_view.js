@@ -3,15 +3,18 @@ import NavBar from './nav_bar';
 
 
 export default class GameView extends Component {
-  // static propTypes = {
-    // onSelectTab: PropTypes.func.isRequired
-  // },
+  static propTypes = {
+    // onSelectTab: PropTypes.func.isRequired,
+    child: PropTypes.element.isRequired
+  }
+
 
   render() {
+
     return (
     <div className="game-view">
-
-    
+     {this.props.child}
+      
       <div className="score-container">
         <div className="score-wrapper">
           <p>Score Display</p>
