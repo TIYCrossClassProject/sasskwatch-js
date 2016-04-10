@@ -4,11 +4,12 @@ import Icon from './icon';
 export default class Home extends Component {
   static propTypes = {
     onLogin: PropTypes.func.isRequired,
-    onSignUp: PropTypes.func.isRequired
+    onSignUp: PropTypes.func.isRequired,
+    onHometoAddImageView: PropTypes.func.isRequired
   }
 
   render() {
-    let { onSignUp, onLogin } = this.props;
+    let { onSignUp, onLogin, onHometoAddImageView } = this.props;
     return (
       <div className="home-view">
         <div className="home-header">
@@ -17,7 +18,10 @@ export default class Home extends Component {
           </div>
           <div className="home-header-add-photo">
             <h3>Submit Questions Here</h3>
-            <button id="home-add-photo-btn"><Icon type= "plus-square"/></button>
+            <button onClick={onHometoAddImageView} 
+                    id="home-add-photo-btn">
+                      <Icon type= "plus-square"/>
+            </button>
           </div>
         </div>
         <div className="home-content">
