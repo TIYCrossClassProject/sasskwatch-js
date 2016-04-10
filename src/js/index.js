@@ -99,7 +99,7 @@ function renderNavBar() {
     render((
       <NavBar onPlay={renderGameView} 
               onAddImage={renderImageAddView} 
-              onAccount={x => x} 
+              onAccount={renderAccountView} 
               onLogout={x => x}/>
       ), document.querySelector('.app')
     );
@@ -136,12 +136,28 @@ function renderGameView() {
     <GameView>
      <NavBar onPlay={renderGameView} 
               onAddImage={renderImageAddView} 
-              onAccount={x => x} 
+              onAccount={renderAccountView} 
               onLogout={x => x}/>
     </GameView>
     ), document.querySelector('.app')
   );
 }
+
+function renderAccountView() {
+  render((
+    <AccountView/>
+    ), document.querySelector('.app')
+  );
+}
+
+function renderLogoutSuccessView() {
+  render((
+    <LogoutSuccessView/>
+    ), document.querySelector('.app')
+  );
+}
+
+
 
 // renderHome();
 // renderNavBar();
