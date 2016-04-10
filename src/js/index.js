@@ -39,7 +39,7 @@ ajax({
 
     ajaxSetup({
       headers: {
-        'X-Access-Token': resp.access_token
+        'auth_token': '39dceac031e3b716f4f81b8550d88b17'
       }
     })
 
@@ -133,14 +133,16 @@ function renderImageAddView() {
 
 function renderGameView() {
     render((
-    <GameView onPlay={x => x} 
+      <div>
+        <NavBar onPlay={x => x} 
               onAddImage={x => x} 
               onAccount={x => x} 
               onLogout={x => x}/>
+        <GameView />
+      </div>
     ), document.querySelector('.app')
   );
 }
 
-// renderHome();
-// renderNavBar();
-renderGameView();
+renderHome();
+// renderGameView();
