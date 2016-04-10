@@ -5,7 +5,7 @@ import NavBar from './nav_bar';
 export default class GameView extends Component {
   static propTypes = {
     // onSelectTab: PropTypes.func.isRequired,
-    child: PropTypes.element.isRequired
+    children: PropTypes.element.isRequired
   }
 
 
@@ -13,7 +13,7 @@ export default class GameView extends Component {
 
     return (
     <div className="game-view">
-     {this.props.child}
+     <div>{this.props.children}</div>
       
       <div className="score-container">
         <div className="score-wrapper">
