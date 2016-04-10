@@ -30,14 +30,14 @@ export default class SignupView extends Component {
 
 	render() {
 		let { preview } = this.state;
-		let { onSignupSubmit } = this.props;
+		let { onSignupSubmit, onSwitchToLogin } = this.props;
 		return (
 			<div className="signup-view">
 				<div><h2>Sign Up to Play Now!</h2></div>
 				<SSF onData={::this.dataHandler}>
-					<div><input type="text" name="firstName" placeholder=" First Name"/></div>
-					<div><input type="text" name="lastName" placeholder=" Last Name"/></div>
-					<div><input type="text" name="username" placeholder=" Username"/></div>
+					<div><input type="text" name="first" placeholder=" First Name"/></div>
+					<div><input type="text" name="last" placeholder=" Last Name"/></div>
+					<div><input type="text" name="alias" placeholder=" Username"/></div>
 					<div><input type="text" name="email" placeholder=" Email Address"/></div>
 					<div><input type="password" name="password" placeholder=" Create Password"/></div>
 					
@@ -47,6 +47,7 @@ export default class SignupView extends Component {
 					
 					<button>Submit</button>
 				</SSF>
+					<button onClick={onSwitchToLogin}>I Already Have An Account</button>
 			</div>
 		);
 	}

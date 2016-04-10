@@ -32,9 +32,7 @@ export default class Home extends Component {
             <button onClick={onLogin} id="home-login-btn">Login</button>
           </div>
         </div>
-        <div className="home-footer">
-          <h4><Icon type= "registered"/>Team Sasskwatch 2016</h4>
-        </div>
+      
     </div>
       )
   }

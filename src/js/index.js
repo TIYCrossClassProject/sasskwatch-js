@@ -12,7 +12,7 @@ import NProgress from 'react-nprogress';
 import ImageAddView from './image_add_view';
 import ImageUploadSuccessView from './image_upload_success_view';
 
-
+let loggedInUser;
 
 let addUserAndRenderGame = (user) => {
   console.log(' new user ', user);
@@ -36,7 +36,7 @@ ajax({
   processData: false,
   contentType: false
 }).then(response => {
-  const loggedInUser = response.alias;
+  loggedInUser = response.alias;
 
     ajaxSetup({
       headers: {
@@ -57,10 +57,10 @@ let loginAndRenderGame = (user) => {
   NProgress.start();
 
   ajax({
-    url: 'https://lit-headland-16057.herokuapp.com/login',
+    url: 'http://lit-headland-16057.herokuapp.com/login',
     type: 'POST',
     data: {
-      alias: user.alias,
+      email: user.email,
       password: user.password
     },
     cache: false,
@@ -117,6 +117,16 @@ ajax({
   NProgress.done();
   renderGameView();
   })
+}
+
+let logoutAndRenderHome = (user) => {
+  loggedInUser = null;
+  ajaxSetup({
+      headers: {
+        auth_token: response.auth_token
+      }
+    });
+  renderHome();
 }
 
 function renderHome() {

@@ -7,6 +7,9 @@
 ///VARIABLES////
 
 $roboto: 'Roboto', sans-serif;
+$app-blue: #144be0;
+$app-green: #00f55e;
+$text-white: #ECFDF3;
 
 ///////////////////
 //  APP STYLES   //
@@ -16,12 +19,17 @@ body {
   // background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRDk4jGat7ot2djnucqCbPN9nb6yldIPb4WraxvBXl1V3D-CIpN");
   // background-size: 100% 100%;
   margin: 30px 0 0 0;
-  background: #efefef;
+  background: $app-blue;
   .app {
-  width: 50%;
+  width: 70%;
   margin: auto;
   }
 }
+
+h4  {
+  text-align: center;
+  color: $text-white;
+  }
 
 
 ///////////////////
@@ -77,6 +85,9 @@ h1, h3 {
 
 #img-sasquatch-flip {
   transform: scaleX(-1);
+
+
+
 
 ///////////////////
 //  SIGN UP VIEW //
