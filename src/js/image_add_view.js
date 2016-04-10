@@ -5,7 +5,7 @@ import Dropzone from 'react-dropzone';
 export default class ImageAddView extends Component {
 	constructor(props) {
 		super(props);
-			state = {
+			this.state = {
 				preview: '../images/drop-here.png'
 		}
 	}
@@ -17,7 +17,8 @@ export default class ImageAddView extends Component {
 
 	dropHandler([file]) {
 		this.setState({preview: file.preview})
-		this.file = file
+		this.file = file;
+		console.log(this.file);
 	};
 
 	dataHandler(data) {
@@ -27,12 +28,14 @@ export default class ImageAddView extends Component {
 
 	render() {
 		let { preview } = this.state;
+		let { onGameImageAdd } = this.props;
 		return (
 			<div className="image-add-view">
 				<SSF onData={::this.dataHandler}>
-					<Dropzone onDrop={dropHandler}>
+					<Dropzone className="dropzone" onDrop={::this.dropHandler}>
 						<img src={preview} alt="Drop Your Photo Here" />
 					</Dropzone>
+					<div><input type="text" name="answer" placeholder="Whose Logo Is This?"/></div>
 					<button>Add Photo</button>
 				</SSF>
 			</div>

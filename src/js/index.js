@@ -86,6 +86,38 @@ let loginAndRenderGame = (user) => {
   });
 }
 
+let addLogoAndRenderGameView = (image) => {
+  console.log(' new image ', image);
+
+  let data = new FormData();
+  data.append('logo', user.logo);
+  data.append('answer', user.answer);
+
+  NProgress.start();
+
+ajax({
+  url: 'http://lit-headland-16057.herokuapp.com/',
+  type: 'POST',
+  data: data,
+  cache: false,
+  dataType: 'json',
+  processData: false,
+  contentType: false
+}).then(resp => {
+  loggedInUser = resp.alias;
+
+    ajaxSetup({
+      headers: {
+        'X-Access-Token': resp.access_token
+      }
+    })
+
+
+  NProgress.done();
+  renderGameView();
+  })
+}
+
 
 
 function renderHome() {
