@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import Tabs   from 'material-ui/lib/tabs/tabs';
-import Tab    from 'material-ui/lib/tabs/tab';
+// import Tabs   from 'material-ui/lib/tabs/tabs';
+// import Tab    from 'material-ui/lib/tabs/tab';
 // import Slider from 'material-ui/lib/slider';
 
 export default class NavBar extends Component {
@@ -12,46 +12,47 @@ export default class NavBar extends Component {
     onLogout: PropTypes.func.isRequired,
   }
 
-  constructor() {
-    super();
-    this.state = {
-      value: 'game',
-    };
-  }
-
-  selectHandler () {
-   let { onSelectNavOption } = this.props;
- }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     value: 'game',
+  //   };
+  // }
 
   render() {
      let { onPlay, onAddImage, onAccount, onLogout } = this.props;
     return (
-      <Tabs className="nav-bar">
-        <Tab className="nav-tabs" 
+      <div className="nav-bar">
+        <button className="nav-tabs" 
              label="Play Game" 
              value="play game" 
-             onActive={onPlay}>
-        </Tab>
+             onClick={onPlay}>
 
-        <Tab className="nav-tabs" 
+          Play New Game
+        </button>
+
+        <button className="nav-tabs" 
              label="Add Image" 
              value="add image" 
-             onActive={onAddImage}>
-        </Tab>
+             onClick={onAddImage}>
+          Add an Image
+        </button>
 
-        <Tab className="nav-tabs" 
+        <button className="nav-tabs" 
              label="Account" 
              value="account" 
-             onActive={onAccount}>
-        </Tab>
+             onClick={onAccount}>
+          Account
+        </button>
 
-        <Tab className="nav-tabs" 
+        <button className="nav-tabs" 
              label="Log Out" 
              value="log out" 
-             onActive={onLogout}>
-        </Tab>
+             onClick={onLogout}>
+          Logout
+        </button>
 
-      </Tabs>
+      </div>
     );
   }
 }

@@ -52,9 +52,7 @@ export default class SignupView extends Component {
 	}
 }
 
-// <div id="signup-drop">
 
-// </div> onClick={onSignupSubmit}
 
 
 

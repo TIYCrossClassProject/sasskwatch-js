@@ -12,7 +12,8 @@ export default class ImageAddView extends Component {
 
 	static propTypes = {
 		onImageSubmit: PropTypes.func.isRequired,
-		onGameImageAdd: PropTypes.func.isRequired
+		onGameImageAdd: PropTypes.func.isRequired,
+		children: PropTypes.element.isRequired
 	}
 
 	dropHandler([file]) {
@@ -32,6 +33,7 @@ export default class ImageAddView extends Component {
 		return (
 			<div className="image-add-view">
 				<SSF onData={::this.dataHandler}>
+					<div>{this.props.children}</div>
 					<Dropzone className="dropzone" onDrop={::this.dropHandler}>
 						<img id="logo-add-placeholder" height="200" width="200" src={preview} alt="Drop Your Photo Here" />
 					</Dropzone>

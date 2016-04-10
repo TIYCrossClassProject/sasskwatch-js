@@ -10,6 +10,7 @@ import GameView from './game_view';
 import { ajax } from 'jquery';
 import NProgress from 'react-nprogress';
 import ImageAddView from './image_add_view';
+import ImageUploadSuccessView from './image_upload_success_view';
 
 
 
@@ -118,8 +119,6 @@ ajax({
   })
 }
 
-
-
 function renderHome() {
     render((
     <Home onSignUp={renderSignupView} onLogin={renderLoginView} onHometoAddImageView={renderImageAddView}/>
@@ -158,19 +157,24 @@ function renderLoginView() {
 
 function renderImageAddView() {
     render((
-    <ImageAddView onImageSubmit={x => x} onGameImageAdd={x => x}/>
+    <ImageAddView onImageSubmit={x => x} onGameImageAdd={x => x}>
+      <NavBar onPlay={renderGameView}
+              onAddImage={renderImageAddView} 
+              onAccount={renderAccountView} 
+              onLogout={renderLogoutSuccessView}/>
+    </ImageAddView>
     ), document.querySelector('.app')
   );
 }
 
 function renderGameView() {
+  console.log('game view whats up');
     render((
-
     <GameView>
      <NavBar onPlay={renderGameView} 
-              onAddImage={renderImageAddView} 
-              onAccount={renderAccountView} 
-              onLogout={renderLogoutSuccessView}/>
+             onAddImage={renderImageAddView} 
+             onAccount={renderAccountView} 
+             onLogout={renderLogoutSuccessView}/>
     </GameView>
     ), document.querySelector('.app')
   );
@@ -188,6 +192,20 @@ function renderAccountView() {
   );
 }
 
+function renderImageUploadSuccessView() {
+  render((
+    <ImageUploadSuccessView 
+      onAddAnotherImage={renderImageAddView} 
+      onTakeMeHome={renderGameView}>
+      <NavBar onPlay={renderGameView} 
+              onAddImage={renderImageAddView} 
+              onAccount={renderAccountView} 
+              onLogout={renderLogoutSuccessView}/> 
+    </ImageUploadSuccessView>
+
+    ), document.querySelector('.app')
+  );
+}
 
 function renderLogoutSuccessView() {
   render((
@@ -200,4 +218,6 @@ function renderLogoutSuccessView() {
 
 // renderHome();
 // renderNavBar();
-renderGameView();
+// renderGameView();
+// renderImageUploadSuccessView();
+renderImageAddView();
