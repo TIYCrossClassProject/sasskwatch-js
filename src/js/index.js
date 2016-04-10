@@ -156,6 +156,8 @@ function renderLoginView() {
 }
 
 function renderImageAddView() {
+  console.log('renderImageAddView ran');
+
     render((
     <ImageAddView onImageSubmit={x => x} onGameImageAdd={x => x}>
       <NavBar onPlay={renderGameView}

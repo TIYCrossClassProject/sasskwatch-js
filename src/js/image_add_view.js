@@ -25,6 +25,7 @@ export default class ImageAddView extends Component {
 	dataHandler(data) {
 		data.file = this.file;
 		this.props.onGameImageAdd(data);
+		console.log(this.file);
 	};
 
 	render() {
