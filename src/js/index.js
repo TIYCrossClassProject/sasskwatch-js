@@ -184,7 +184,6 @@ function renderAccountView() {
               onAccount={renderAccountView} 
               onLogout={renderLogoutSuccessView}/>
     </AccountView>
->>>>>>> c323f2ab635f0a67e9755d728ef0825230ab381b
     ), document.querySelector('.app')
   );
 }
@@ -201,5 +200,4 @@ function renderLogoutSuccessView() {
 
 renderHome();
 // renderNavBar();
->>>>>>> c323f2ab635f0a67e9755d728ef0825230ab381b
 // renderGameView();

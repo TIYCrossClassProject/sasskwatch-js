@@ -19,24 +19,12 @@ export default class NavBar extends Component {
     };
   }
 
-<<<<<<< HEAD
-=======
   selectHandler () {
    let { onSelectNavOption } = this.props;
->>>>>>> c323f2ab635f0a67e9755d728ef0825230ab381b
-
-  // Pretty sure we don't need thus anymore after learning about the onActive thing.
-  // selectHandler () {
-  //   let { onPlay, onAddImage, onAccount, onLogout } = this.props;
-
-  // }
+ }
 
   render() {
-<<<<<<< HEAD
-    let { onSelectNavOption, onPlay, onAddImage, onAccount, onLogout } = this.props;
-=======
      let { onPlay, onAddImage, onAccount, onLogout } = this.props;
->>>>>>> c323f2ab635f0a67e9755d728ef0825230ab381b
     return (
       <Tabs className="nav-bar">
         <Tab className="nav-tabs" 
