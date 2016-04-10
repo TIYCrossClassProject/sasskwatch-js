@@ -49,48 +49,80 @@ ajax({
   })
 }
 
-// let loginAndRenderGame = (user) => {
+let loginAndRenderGame = (user) => {
 
-//   console.log('signing in', user);
+  console.log('signing in', user);
 
-//   NProgress.start();
+  NProgress.start();
 
-//   ajax({
-//     url: 'http://lit-headland-16057.herokuapp.com/',
-//     type: 'POST',
-//     data: {
-//       alias: user.alias,
-//       password: user.password
-//     },
-//     cache: false,
-//     dataType: 'json',
-//     processData: false,
-//     contentType: false
-//   }).then(resp => {
-//     if (resp.success) {
-//       renderGameView();
+  ajax({
+    url: 'http://lit-headland-16057.herokuapp.com/',
+    type: 'POST',
+    data: {
+      alias: user.alias,
+      password: user.password
+    },
+    cache: false,
+    dataType: 'json',
+    processData: false,
+    contentType: false
+  }).then(resp => {
+    if (resp.success) {
+      renderGameView();
 
-//       loggedInUser = resp.alias;
+      loggedInUser = resp.alias;
 
-//       ajaxSetup({
-//       headers: {
-//         'X-Access-Token': resp.access_token
-//       }
-//     }) 
-//   } else {
-//       alert('Invalid Username and Password!');
-//       }
+      ajaxSetup({
+      headers: {
+        'X-Access-Token': resp.access_token
+      }
+    }) 
+  } else {
+      alert('Invalid Username and Password!');
+      }
 
-//     NProgress.done();
-//     renderGameView();
-//   });
-// }
+    NProgress.done();
+    renderGameView();
+  });
+}
+
+let addLogoAndRenderGameView = (image) => {
+  console.log(' new image ', image);
+
+  let data = new FormData();
+  data.append('logo', user.logo);
+  data.append('answer', user.answer);
+
+  NProgress.start();
+
+ajax({
+  url: 'http://lit-headland-16057.herokuapp.com/',
+  type: 'POST',
+  data: data,
+  cache: false,
+  dataType: 'json',
+  processData: false,
+  contentType: false
+}).then(resp => {
+  loggedInUser = resp.alias;
+
+    ajaxSetup({
+      headers: {
+        'X-Access-Token': resp.access_token
+      }
+    })
+
+
+  NProgress.done();
+  renderGameView();
+  })
+}
 
 
 
 function renderHome() {
     render((
-    <Home onSignUp={renderSignupView} onLogin={renderLoginView}/>
+    <Home onSignUp={renderSignupView} onLogin={renderLoginView} onHometoAddImageView={renderImageAddView}/>
     ), document.querySelector('.app')
   );
 }
@@ -99,8 +131,8 @@ function renderNavBar() {
     render((
       <NavBar onPlay={renderGameView} 
               onAddImage={renderImageAddView} 
-              onAccount={x => x} 
-              onLogout={x => x}/>
+              onAccount={renderAccountView} 
+              onLogout={renderLogoutSuccessView}/>
       ), document.querySelector('.app')
     );
 }
@@ -133,16 +165,41 @@ function renderImageAddView() {
 
 function renderGameView() {
     render((
-      <div>
-        <NavBar onPlay={x => x} 
-              onAddImage={x => x} 
-              onAccount={x => x} 
-              onLogout={x => x}/>
-        <GameView />
-      </div>
+
+    <GameView>
+     <NavBar onPlay={renderGameView} 
+              onAddImage={renderImageAddView} 
+              onAccount={renderAccountView} 
+              onLogout={renderLogoutSuccessView}/>
+    </GameView>
     ), document.querySelector('.app')
   );
 }
 
+function renderAccountView() {
+  render((
+    <AccountView>
+      <NavBar onPlay={renderGameView} 
+              onAddImage={renderImageAddView} 
+              onAccount={renderAccountView} 
+              onLogout={renderLogoutSuccessView}/>
+    </AccountView>
+>>>>>>> c323f2ab635f0a67e9755d728ef0825230ab381b
+    ), document.querySelector('.app')
+  );
+}
+
+
+function renderLogoutSuccessView() {
+  render((
+    <LogoutSuccessView/>
+    ), document.querySelector('.app')
+  );
+}
+
+
+
 renderHome();
+// renderNavBar();
+>>>>>>> c323f2ab635f0a67e9755d728ef0825230ab381b
 // renderGameView();
