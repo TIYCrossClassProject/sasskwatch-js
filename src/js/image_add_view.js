@@ -33,7 +33,7 @@ export default class ImageAddView extends Component {
 			<div className="image-add-view">
 				<SSF onData={::this.dataHandler}>
 					<Dropzone className="dropzone" onDrop={::this.dropHandler}>
-						<img id="logo-add-placeholder" src={preview} alt="Drop Your Photo Here" />
+						<img id="logo-add-placeholder" height="200" width="200" src={preview} alt="Drop Your Photo Here" />
 					</Dropzone>
 					<div><input type="text" name="answer" placeholder="Whose Logo Is This?"/></div>
 					<button>Add Photo</button>

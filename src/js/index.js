@@ -198,6 +198,6 @@ function renderLogoutSuccessView() {
 
 
 
-renderHome();
+// renderHome();
 // renderNavBar();
-// renderGameView();
+renderGameView();
