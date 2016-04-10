@@ -33,8 +33,8 @@ export default class ImageAddView extends Component {
 		let { onGameImageAdd } = this.props;
 		return (
 			<div className="image-add-view">
+				<div>{this.props.children}</div>
 				<SSF onData={::this.dataHandler}>
-					<div>{this.props.children}</div>
 					<Dropzone className="dropzone" onDrop={::this.dropHandler}>
 						<img id="logo-add-placeholder" height="200" width="200" src={preview} alt="Drop Your Photo Here" />
 					</Dropzone>
