@@ -14,19 +14,20 @@ export default class Home extends Component {
       <div className="home-view">
         <div className="home-header">
           <div className="home-header-title">
-            <h1>Guess...That...Mythical Creature!</h1>
+            <h1>Which Tech?</h1>
+            <h2>A logo guessing game.</h2>
           </div>
           <div className="home-header-add-photo">
-            <h3>Submit Questions Here</h3>
+            <h3>Add Your Own Questions Here!</h3>
             <button onClick={onHometoAddImageView} 
                     id="home-add-photo-btn">
-                      <Icon type= "plus-square"/>
+                      <Icon id="add-icon" type= "plus-square"/>
             </button>
           </div>
         </div>
         <div className="home-content">
-          <img id="img-sasquatch" src="./images/sasquatch.png"/>
-          <img id="img-sasquatch-flip" src="./images/sasquatch.png"/>
+          <img id="img-circuit" src="./images/electronics.png"/>
+          <img id="img-circuit-flip" src="./images/electronics.png"/>
           <div id="home-login-signup-btn">
             <button onClick={onSignUp} id="home-sign-up-btn">Sign Up</button>
             <button onClick={onLogin} id="home-login-btn">Login</button>

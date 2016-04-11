@@ -7,6 +7,7 @@
 ///VARIABLES////
 
 $roboto: 'Roboto', sans-serif;
+$acme: 'Acme', sans-serif;
 $app-blue: #144be0;
 $app-green: #00f55e;
 $text-white: #ECFDF3;
@@ -29,6 +30,7 @@ body {
 h4  {
   text-align: center;
   color: $text-white;
+  font-family: $acme;
   }
 
 
@@ -42,35 +44,54 @@ h4  {
 }
 
 h1, h3, .home-header-title, .home-header-add-photo {
-  display: inline-block;
+  // display: inline-block;
 }
 
 h1 {
-  text-align: center;
+  font-size: 5em;
+  
 }
 
-h1, h3 {
+h1, h2, h3 {
   margin: 0;
+  font-family: $acme;
+  color: $text-white;
 }
 
+h3 {
+  font-size: 2em;
+  width: 225px;
+}
 .home-header {
   display: flex;
+  justify-content: space-between;
 }
 
 #home-add-photo-btn {
   border: none;
   background: none;
+  color: $text-white;
+}
+
+#add-icon {
+  font-size: 3em;
 }
 
 #home-login-signup-btn {
   display: flex;
   justify-content: center;
+  justify-content: space-around;
 }
 
 #home-sign-up-btn, #home-login-btn {
   display: inline-block;
-  margin: 30px;
-
+  margin: 20px;
+  border: none;
+  background: #5a81e9;
+  color: white;
+  font-family: $acme;
+  font-size: 2.5em;
+  border-radius: 10px;
    
 }
 
@@ -78,15 +99,15 @@ h1, h3 {
 
 }
 
-#img-sasquatch, #img-sasquatch-flip {
+#img-circuit, #img-circuit-flip {
   height: 420px;
   margin: auto;
 }
 
-#img-sasquatch-flip {
+#img-circuit-flip {
   transform: scaleX(-1);
 
-
+}
 
 
 ///////////////////
@@ -116,17 +137,83 @@ h1, h3 {
 
 
 
+///////////////////
+//  NAV BAR VIEW //
+///////////////////
 
-
-
-
-
-
-
-
-
-
-
-
-
+.nav-tabs {
+  background: #5a81e9;
+  margin: 20px;
+  border: none;
+  font-family: $acme;
+  font-size: 2em;
+  color: $text-white;
+  border-radius: 15px;
 }
+
+.nav-bar {
+  margin: auto;
+}
+
+///////////////////
+//  IMG ADD VIEW //
+///////////////////
+
+.image-add-view {
+  button {
+  background: #5a81e9;
+  margin: 20px;
+  border: none;
+  font-family: $acme;
+  font-size: 2em;
+  color: $text-white;
+  border-radius: 15px;
+  }
+}
+
+#logo-add-placeholder {
+  margin: auto;
+  border: 5px solid #0e349c;
+}
+
+#answer-box {
+  margin: 20px;
+}
+
+.image-add-form {
+  display: block; 
+  margin: auto;
+}
+
+///////////////////
+//  Game  VIEW   //
+///////////////////
+
+.image-wrapper{
+  img {
+    border: 5px solid #0e349c;
+  }
+}
+
+.score-container, .image-container, .answer-choice-wrapper {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
