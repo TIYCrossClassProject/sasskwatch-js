@@ -127,6 +127,7 @@ let logoutAndRenderHome = (user) => {
       }
     });
   renderHome();
+  alert('You have been logged out.')
 }
 
 function renderHome() {
@@ -141,7 +142,7 @@ function renderNavBar() {
       <NavBar onPlay={renderGameView} 
               onAddImage={renderImageAddView} 
               onAccount={renderAccountView} 
-              onLogout={renderLogoutSuccessView}/>
+              onLogout={logoutAndRenderHome}/>
       ), document.querySelector('.app')
     );
 }
@@ -173,7 +174,7 @@ function renderImageAddView() {
       <NavBar onPlay={renderGameView}
               onAddImage={renderImageAddView} 
               onAccount={renderAccountView} 
-              onLogout={renderLogoutSuccessView}/>
+              onLogout={logoutAndRenderHome}/>
     </ImageAddView>
     ), document.querySelector('.app')
   );
@@ -186,7 +187,7 @@ function renderGameView() {
      <NavBar onPlay={renderGameView} 
              onAddImage={renderImageAddView} 
              onAccount={renderAccountView} 
-             onLogout={renderLogoutSuccessView}/>
+             onLogout={logoutAndRenderHome}/>
     </GameView>
     ), document.querySelector('.app')
   );
@@ -198,7 +199,7 @@ function renderAccountView() {
       <NavBar onPlay={renderGameView} 
               onAddImage={renderImageAddView} 
               onAccount={renderAccountView} 
-              onLogout={renderLogoutSuccessView}/>
+              onLogout={logoutAndRenderHome}/>
     </AccountView>
     ), document.querySelector('.app')
   );
@@ -212,7 +213,7 @@ function renderImageUploadSuccessView() {
       <NavBar onPlay={renderGameView} 
               onAddImage={renderImageAddView} 
               onAccount={renderAccountView} 
-              onLogout={renderLogoutSuccessView}/> 
+              onLogout={logoutAndRenderHome}/> 
     </ImageUploadSuccessView>
 
     ), document.querySelector('.app')
@@ -228,12 +229,12 @@ function renderLogoutSuccessView() {
 
 
 
-renderHome();
+// renderHome();
 // renderNavBar();
 // renderGameView();
 // renderImageUploadSuccessView();
 // renderImageAddView();
-
+renderSignupView();
 
 
 
