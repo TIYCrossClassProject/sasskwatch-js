@@ -11,6 +11,8 @@ import { ajax, ajaxSetup } from 'jquery';
 import NProgress from 'react-nprogress';
 import ImageAddView from './image_add_view';
 import ImageUploadSuccessView from './image_upload_success_view';
+import AccountView from './account_view';
+
 
 let loggedInUser;
 
@@ -28,23 +30,23 @@ let addUserAndRenderGame = (user) => {
   NProgress.start();
 
 ajax({
-  url: 'https://lit-headland-16057.herokuapp.com/signup',
-  type: 'POST',
-  data: data,
-  cache: false,
-  dataType: 'json',
-  processData: false,
-  contentType: false
+  // url: 'https://lit-headland-16057.herokuapp.com/signup',
+  // type: 'POST',
+  // data: data,
+  // cache: false,
+  // dataType: 'json',
+  // processData: false,
+  // contentType: false
 }).then(response => {
-  loggedInUser = response.alias;
+  // loggedInUser = response.alias;
 
-    ajaxSetup({
-      headers: {
-        auth_token: response.auth_token
-      }
-    })
+  //   ajaxSetup({
+  //     headers: {
+  //       auth_token: response.auth_token
+  //     }
+  //   })
 
-  NProgress.done();
+  // NProgress.done();
 
   renderGameView();
   })
@@ -123,12 +125,15 @@ let logoutAndRenderHome = (user) => {
   loggedInUser = null;
   ajaxSetup({
       headers: {
-        auth_token: response.auth_token
+        // auth_token: response.auth_token
       }
     });
   renderHome();
   alert('You have been logged out.')
 }
+
+   
+
 
 function renderHome() {
     render((
@@ -229,12 +234,12 @@ function renderLogoutSuccessView() {
 
 
 
-// renderHome();
+renderHome();
 // renderNavBar();
 // renderGameView();
 // renderImageUploadSuccessView();
 // renderImageAddView();
-renderSignupView();
+// renderSignupView();
 
 
 

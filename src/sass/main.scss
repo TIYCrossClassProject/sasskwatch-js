@@ -22,15 +22,17 @@ body {
   margin: 30px 0 0 0;
   background: $app-blue;
   .app {
-  width: 70%;
+  width: 75%;
   margin: auto;
+  text-align: center;
   }
 }
 
 h4  {
-  text-align: center;
+  // text-align: center;
   color: $text-white;
   font-family: $acme;
+  margin-left: 200px;
   }
 
 
@@ -116,20 +118,30 @@ h3 {
 
 .signup-view {
   margin: 20px auto 20px auto;
+  button {
+  background: #5a81e9;
+  margin: 20px;
+  border: none;
+  font-family: $acme;
+  font-size: 1em;
+  color: $text-white;
+  border-radius: 15px;
+  }
+
 }
 
 .signup-input {
   background: $text-white;
   border: 2px solid black;
   border-radius: 4px;
-  color: $app-green;
-  width: 400px;
-  height: 40px; 
+  color: $app-blue;
+  width: 296px;
+  height: 30px; 
+  margin: 0 0 10px 0;
 }
 
 #signup-placeholder {
-  height: 300px;
-  width: 400px;
+  width: 300px;
 }
 
 
@@ -137,26 +149,50 @@ h3 {
 //  LOGIN VIEW //
 ///////////////////
 
+
 .login-view {
-  div {
-    div {
-      div {
-        input {
-          width: 800px;
-          height: 200px;
-        }
-        button {
-          width: 800px;
-          height: 200px;
-        }
-      }
-      button {
-        width: 800px;
-          height: 200px;
-      }
-    }
+  margin: 20px auto 20px auto;
+  .login-input {
+  background: $text-white;
+  border: 2px solid black;
+  border-radius: 4px;
+  color: $app-blue;
+  width: 400px;
+  height: 40px; 
   }
+  button {
+  background: #5a81e9;
+  margin: 20px;
+  border: none;
+  font-family: $acme;
+  font-size: 1em;
+  color: $text-white;
+  border-radius: 15px;
+  }
+
 }
+
+
+// .login-view {
+//   div {
+//     div {
+//       div {
+//         input {
+//           width: 800px;
+//           height: 200px;
+//         }
+//         button {
+//           width: 800px;
+//           height: 200px;
+//         }
+//       }
+//       button {
+//         width: 800px;
+//           height: 200px;
+//       }
+//     }
+//   }
+// }
 
 
 
@@ -179,7 +215,7 @@ h3 {
   margin: 20px;
   border: none;
   font-family: $acme;
-  font-size: 2em;
+  font-size: 1.5em;
   color: $text-white;
   border-radius: 15px;
 }
@@ -200,7 +236,7 @@ h3 {
   font-family: $acme;
   font-size: 2em;
   color: $text-white;
-  border-radius: 15px;
+  border-radius: 15px; 
   }
 }
 
@@ -222,9 +258,27 @@ h3 {
 //  Game  VIEW   //
 ///////////////////
 
+.game-view {
+  display: inline-block;
+}
+
 .image-wrapper{
   img {
     border: 5px solid #0e349c;
+    max-width: 375px;
+  }
+}
+
+.answer-choice-wrapper {
+  display: block;
+  button {
+  background: #5a81e9;
+  margin: 20px;
+  border: none;
+  font-family: $acme;
+  font-size: 2em;
+  color: $text-white;
+  border-radius: 15px;  
   }
 }
 

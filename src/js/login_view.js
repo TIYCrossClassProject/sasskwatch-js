@@ -18,9 +18,12 @@ export default class LoginView extends Component {
 		let { onLoginToSignup } = this.props;
 		return (
 			<div className="login-view">
+				<h1>Which Tech?</h1>
+        <h2>Login</h2>
+				<img id="img-circuit" src="./images/electronics.png"/>
 				<SSF onData={::this.dataHandler}>
-					<div><input type="email" name="email" placeholder=" Enter Your Email Address"/></div>
-					<div><input type="password" name="password" placeholder=" Enter Your Password"/></div>
+					<div><input className="login-input" type="email" name="email" placeholder=" Enter Your Email Address"/></div>
+					<div><input className="login-input" type="password" name="password" placeholder=" Enter Your Password"/></div>
 					<button>Log In</button>
 				</SSF>
 					<button onClick={onLoginToSignup}>Wait, I need to Sign Up!</button>

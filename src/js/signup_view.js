@@ -26,6 +26,7 @@ export default class SignupView extends Component {
 	dataHandler(data) {
 		data.avatar = this.avatar;
 		this.props.onSignupSubmit(data);
+	
 	}
 
 	render() {

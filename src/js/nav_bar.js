@@ -23,6 +23,7 @@ export default class NavBar extends Component {
      let { onPlay, onAddImage, onAccount, onLogout } = this.props;
     return (
       <div className="nav-bar">
+
         <button className="nav-tabs" 
              label="Play Game" 
              value="play game" 
@@ -49,7 +50,7 @@ export default class NavBar extends Component {
              label="Log Out" 
              value="log out" 
              onClick={onLogout}>
-          Logout
+          Hello, User  |   Logout
         </button>
 
       </div>

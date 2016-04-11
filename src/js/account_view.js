@@ -10,10 +10,10 @@ export default class AccountView extends Component {
     return (
       <div className="account-view">
         <div>{this.props.children}</div>
-        <div>First Name and Last Name goes here</div>
+        <div>User</div>
         <div>Avatar Photo</div>
         <div>Email Goes Here</div>
-        <div>Othere Details to Add</div>
+        <div>Top Score</div>
       </div>
 
       )
