@@ -35,11 +35,11 @@ export default class SignupView extends Component {
 			<div className="signup-view">
 				<div><h2>Sign Up to Play Now!</h2></div>
 				<SSF onData={::this.dataHandler}>
-					<div><input type="text" name="first" placeholder=" First Name"/></div>
-					<div><input type="text" name="last" placeholder=" Last Name"/></div>
-					<div><input type="text" name="alias" placeholder=" Username"/></div>
-					<div><input type="text" name="email" placeholder=" Email Address"/></div>
-					<div><input type="password" name="password" placeholder=" Create Password"/></div>
+					<div><input className="signup-input" type="text" name="first" placeholder=" First Name"/></div>
+					<div><input className="signup-input" type="text" name="last" placeholder=" Last Name"/></div>
+					<div><input className="signup-input" type="text" name="alias" placeholder=" Username"/></div>
+					<div><input className="signup-input" type="text" name="email" placeholder=" Email Address"/></div>
+					<div><input className="signup-input" type="password" name="password" placeholder=" Create Password"/></div>
 					
 						<Dropzone className="dropzone" onDrop={::this.dropHandler}>
 							<img id="signup-placeholder" height="200" width="200" src={preview} alt="Drop Image Here"/>

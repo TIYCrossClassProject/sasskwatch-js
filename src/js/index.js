@@ -228,12 +228,12 @@ function renderLogoutSuccessView() {
 
 
 
-renderHome();
+// renderHome();
 // renderNavBar();
 // renderGameView();
 // renderImageUploadSuccessView();
 // renderImageAddView();
-
+renderSignupView();
 
 
 
